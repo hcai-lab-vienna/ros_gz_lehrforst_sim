@@ -6,5 +6,4 @@
 		bridge_name="ros_gz_scout_bridge"
 		config_file="install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/config/scout_bridges.yaml"
 	></ros_gz_bridge>
-	<node pkg="force_bar" exec="force_bar_node"/>
 </launch>

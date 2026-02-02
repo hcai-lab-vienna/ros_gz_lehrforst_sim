@@ -8,6 +8,8 @@ import math
 
 model_path = os.path.dirname(__file__)
 
+random.seed('lehrforst')
+
 # wether to use nice tree models or not
 fancy = False
 

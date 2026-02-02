@@ -4,6 +4,12 @@ project(ros_gz_lehrforst_sim)
 
 find_package(ament_cmake REQUIRED)
 
+set(ROBOTS
+  bunker
+  scout
+  scout_bumper
+)
+
 install(
   DIRECTORY
     config/
@@ -27,5 +33,18 @@ install(
     worlds/
   DESTINATION share/${PROJECT_NAME}/worlds
 )
+
+foreach(robot ${ROBOTS})
+  set(xacro_file
+    "${CMAKE_CURRENT_SOURCE_DIR}/models/${robot}/model.xacro"
+  )
+  set(sdf_file
+    "${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}/models/${robot}/model.sdf"
+  )
+  execute_process(
+      COMMAND xacro ${xacro_file} -o ${sdf_file}
+      RESULT_VARIABLE XACRO_RESULT
+  )
+endforeach()
 
 ament_package()
