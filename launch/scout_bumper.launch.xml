@@ -1,11 +1,13 @@
 <launch>
-	<executable
-		cmd="gz sim install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/worlds/scout_bumper_lehrforst.sdf"
-	/>
-	<ros_gz_bridge
-		bridge_name="ros_gz_scout_bridge"
-		config_file="install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/config/scout_bumper_bridges.yaml"
-	>
-	</ros_gz_bridge>
-	<node pkg="force_bar" exec="force_bar_node"/>
+    <executable
+        cmd="gz sim install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/worlds/scout_bumper_lehrforst.sdf"
+    />
+    <ros_gz_bridge
+        bridge_name="ros_gz_scout_bridge"
+        config_file="install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/config/scout_bumper_bridges.yaml"
+    >
+    </ros_gz_bridge>
+    <executable
+        cmd="python3 install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/scripts/force_bar_node.py"
+    />
 </launch>
