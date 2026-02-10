@@ -4,19 +4,19 @@
 <world name="scout_lehrforst">
 
 
-  <plugin
-    filename="gz-sim-physics-system"
-    name="gz::sim::systems::Physics">
+  <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics">
   </plugin>
 
   <plugin
-    filename="gz-sim-user-commands-system"
-    name="gz::sim::systems::UserCommands">
+            filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands"
+        >
   </plugin>
 
   <plugin
-    filename="gz-sim-scene-broadcaster-system"
-    name="gz::sim::systems::SceneBroadcaster">
+            filename="gz-sim-scene-broadcaster-system"
+            name="gz::sim::systems::SceneBroadcaster"
+        >
   </plugin>
 
 
@@ -27,7 +27,7 @@
 
 
   <light type="directional" name="sun">
-    <cast_shadows>true</cast_shadows>
+    <cast_shadows>false</cast_shadows>
     <pose>0 0 10 0 0 0</pose>
     <diffuse>0.8 0.8 0.8 1</diffuse>
     <specular>0.2 0.2 0.2 1</specular>
@@ -51,14 +51,16 @@
     <pose>42 0 0 0 0 0</pose>
     <static>true</static>
     <include merge="true">
-      <uri>install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/models/lehrforst</uri>
+      <uri
+                >install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/models/lehrforst</uri>
     </include>
   </model>
 
   <model name='scout'>
     <pose relative_to='world'>0 0 0 0 0 0</pose>
     <include merge="true">
-      <uri>install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/models/scout</uri>
+      <uri
+                >install/ros_gz_lehrforst_sim/share/ros_gz_lehrforst_sim/models/scout</uri>
     </include>
   </model>
 
